@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/transaction")
@@ -26,8 +27,8 @@ public class TransactionController {
         return transactionService.getAllTransaction();
     }
 
-    @GetMapping("/{id}")
-    public Flux<Transaction> getTransaction(@PathVariable Long transactionId) {
-        return transactionService.getAllTransaction();
+    @GetMapping("/{transactionId}")
+    public Mono<Transaction> getTransactionById(@PathVariable Long transactionId) {
+        return transactionService.getTransactionById(transactionId);
     }
 }
