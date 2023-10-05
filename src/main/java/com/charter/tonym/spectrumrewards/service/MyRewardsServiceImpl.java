@@ -80,7 +80,7 @@ public class MyRewardsServiceImpl implements MyRewardsService {
         return formatter.format(price);
     }
 
-    private Integer calculateRewardsPoints(Double totalPurchaseAmount) {
+    protected Integer calculateRewardsPoints(Double totalPurchaseAmount) {
 
         int less100 = (totalPurchaseAmount >= 50) ? 50 : 0;
 
