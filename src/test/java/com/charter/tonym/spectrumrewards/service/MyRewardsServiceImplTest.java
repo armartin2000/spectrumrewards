@@ -33,6 +33,8 @@ class MyRewardsServiceImplTest {
 
     }
 
+
+
     @Test
     public void testCalculateRewardsPoints_CorrectPoints() throws Exception {
 
